@@ -14,22 +14,29 @@ class MainApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(title:Text("this is second practical"),),
         
-        body: Column(
-         
-          children: [
-            Container(
-              height: 100,
-              width: 100,
-              color: Colors.pink,
-            ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                height: 250,
+                width: 250,
+                color: Color.fromARGB(255, 0, 0, 0)
+              ),
 
-            Container(
-              height: 100,
-              width: 100,
-              color: Colors.yellowAccent,
-            )
-          ],
-        ),
+              SizedBox(
+                height: 10,
+              ),
+
+            ElevatedButton(
+              child: Text("click me"),
+              onPressed: () {
+                print("this is pressed button");
+              },
+            ),
+            ],
+          ),
+        )
       ),
     );
   }
