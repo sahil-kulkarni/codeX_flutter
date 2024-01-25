@@ -15,7 +15,8 @@ class MainApp extends StatelessWidget {
       home: Scaffold(
             
               appBar:AppBar(
-                title: Text("this is practical 4"),
+                title: Text("This is practical 4"),
+                backgroundColor: const Color.fromARGB(255, 0, 0, 0),
               ),
 
               body: Column(
@@ -26,7 +27,7 @@ class MainApp extends StatelessWidget {
 
                   Container(
                 height: 20,
-                margin: EdgeInsets.only(left:320, top: 30),
+                margin: EdgeInsets.only(left:270, top: 30, bottom: 20),
                 child: Text("First row", style: TextStyle(fontSize: 20),),
               ),
                 
@@ -36,21 +37,14 @@ class MainApp extends StatelessWidget {
 
                     children: [
                       
-                     SizedBox(
-                      height: 350,
-                      
-                     ), 
+                    
                       Container(
                         height: 150,
                         width: 150,
                         color: Color.fromARGB(255, 255, 102, 0),
                       ),
                     
-                      SizedBox(
-                        height: 10,
-                       
-                      ),
-
+                     
                       Container(
                         height: 150,
                         width: 150,
@@ -58,10 +52,7 @@ class MainApp extends StatelessWidget {
                        
                       ),
 
-                      SizedBox(
-                        height: 10,
-                        width: 10,
-                      ),
+                   
 
                       Container(
                         height: 150,
@@ -71,9 +62,7 @@ class MainApp extends StatelessWidget {
                     ],
                   ),
 
-                  SizedBox(
-                    height: 10,
-                  ), 
+                
 
                   Column(
 
@@ -82,7 +71,7 @@ class MainApp extends StatelessWidget {
 
                        Container(
                               height: 20,
-                              margin: EdgeInsets.only(left:305, top: 30, bottom: 10),
+                              margin: EdgeInsets.only(left:270, top: 30, bottom: 10 ),
                               child: Text("Second row", style: TextStyle(fontSize: 20),),
                        ),
                 
@@ -90,10 +79,7 @@ class MainApp extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                        children: [
                         
-                        SizedBox(
-                          height: 100,
-                        
-                        ),
+                      
 
                          Container(
                         height: 150,
@@ -101,10 +87,7 @@ class MainApp extends StatelessWidget {
                         color: Color.fromARGB(255, 0, 0, 0),
                       ),
 
-                         SizedBox(
-                          height: 100,
-                          width: 10,
-                        ),
+                       
 
                         Container(
                         height: 150,
@@ -112,11 +95,7 @@ class MainApp extends StatelessWidget {
                         color: Color.fromARGB(255, 255, 0, 0),
                       ),
 
-                       SizedBox(
-                          height: 100,
-                          width: 10,
-                        ),
-
+                      
                       
                         Container(
                         height: 150,
