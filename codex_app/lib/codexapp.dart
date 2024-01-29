@@ -18,9 +18,13 @@ class Codexapp extends StatelessWidget {
         toolbarHeight: 70,
         backgroundColor: Colors.black,
         actions: [
+          IconButton(onPressed: () {},
+           icon: Icon(Icons.search),
+           ),
           IconButton(onPressed: () {}, 
           icon: Icon(Icons.more_vert,),
           ),
+         
         ],
       ),
       body: SizedBox(
