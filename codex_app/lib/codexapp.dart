@@ -1,6 +1,146 @@
 import 'package:flutter/material.dart';
 
 class Codexapp extends StatelessWidget {
+  Widget languages() {
+    return Container(
+      margin: EdgeInsets.only(top: 15, left: 24),
+      child: const Text(
+        "languages",
+        style: TextStyle(
+            fontStyle: FontStyle.italic,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+            color: Color.fromARGB(255, 0, 0, 0)),
+      ),
+    );
+  }
+
+  Widget languageswidget() {
+    return Container(
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: [
+            ReusableCard("images/js-logo.png"),
+            ReusableCard("images/Dart-logo.png"),
+            ReusableCard("images/java-14-logo.png"),
+            ReusableCard("images/Python-logo.png"),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget Framework() {
+    return Container(
+      margin: EdgeInsets.only(top: 15, left: 24),
+      child: const Text(
+        "Framework",
+        style: TextStyle(
+            fontStyle: FontStyle.italic,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+            color: Color.fromARGB(255, 0, 0, 0)),
+      ),
+    );
+  }
+
+  Widget FrameworkWidget() {
+    return Container(
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: [
+            ReusableCard("images/flutter-logo.png"),
+            ReusableCard("images/react-logo.png"),
+            ReusableCard("images/hibernate-logo.png"),
+            ReusableCard("images/spring-logo.png"),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget Database() {
+    return Container(
+      margin: EdgeInsets.only(top: 15, left: 24),
+      child: const Text(
+        "Database",
+        style: TextStyle(
+            fontStyle: FontStyle.italic,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+            color: Color.fromARGB(255, 0, 0, 0)),
+      ),
+    );
+  }
+
+  Widget Databasewidget() {
+    return Container(
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: [
+            ReusableCard("images/mysql-img.png"),
+            ReusableCard("images/mongodb.png"),
+            ReusableCard("images/oracle.png"),
+            ReusableCard("images/maria.png"),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget Tools() {
+    return Container(
+      margin: EdgeInsets.only(top: 15, left: 24),
+      child: const Text(
+        "Tools",
+        style: TextStyle(
+            fontStyle: FontStyle.italic,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+            color: Color.fromARGB(255, 0, 0, 0)),
+      ),
+    );
+  }
+
+  Widget Toolswidget() {
+    return Container(
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: [
+            ReusableCard("images/vs-logo.png"),
+            ReusableCard("images/git-img.png"),
+            ReusableCard("images/eclipse.png"),
+            ReusableCard("images/postman.png"),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget ReusableCard(String image) {
+    return Container(
+      margin: const EdgeInsets.all(20),
+      height: 120,
+      width: 120,
+      decoration: BoxDecoration(
+          boxShadow: const [
+            BoxShadow(
+                color: Color.fromARGB(255, 0, 0, 0),
+                blurRadius: 5,
+                spreadRadius: 1,
+                offset: Offset(8, 8)),
+          ],
+          border: Border.all(color: Colors.yellow),
+          color: Colors.yellow,
+          // borderRadius: BorderRadius.circular(10),
+          image: DecorationImage(image: AssetImage('$image'))),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,412 +171,20 @@ class Codexapp extends StatelessWidget {
           ),
         ],
       ),
-      body: SizedBox(
+      body: Container(
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                  // height: 100,
-                  // width: 100,
-                  child: const Text(
-                    "languages",
-                    style: TextStyle(
-                        fontStyle: FontStyle.italic,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: Color.fromARGB(255, 0, 0, 0)),
-                  ),
-                  margin: const EdgeInsets.only(top: 20, left: 20, bottom: 5)),
-              Container(
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.all(20),
-                        height: 120,
-                        width: 120,
-                        // color: Colors.cyan,
-                        decoration: BoxDecoration(
-                            boxShadow: [
-                              const BoxShadow(
-                                  color: Colors.black,
-                                  blurRadius: 5,
-                                  spreadRadius: 1,
-                                  offset: Offset(8, 8)),
-                            ],
-                            border: Border.all(color: Colors.yellow),
-                            color: Colors.yellow,
-                            borderRadius: BorderRadius.circular(15),
-                            image: const DecorationImage(
-                                image: AssetImage("images/java-14-logo.png"))),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.all(20),
-                        height: 120,
-                        width: 120,
-                        // color: Colors.cyan,
-                        decoration: BoxDecoration(
-                            boxShadow: [
-                              const BoxShadow(
-                                  color: Colors.black,
-                                  blurRadius: 5,
-                                  spreadRadius: 1,
-                                  offset: Offset(8, 8)),
-                            ],
-                            border: Border.all(color: Colors.yellow),
-                            color: Colors.yellow,
-                            borderRadius: BorderRadius.circular(10),
-                            image: const DecorationImage(
-                                image: AssetImage("images/Dart-logo.png"))),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.all(20),
-                        height: 120,
-                        width: 120,
-                        // color: Colors.cyan,
-                        decoration: BoxDecoration(
-                            boxShadow: [
-                              const BoxShadow(
-                                  color: Colors.black,
-                                  blurRadius: 5,
-                                  spreadRadius: 1,
-                                  offset: Offset(8, 8)),
-                            ],
-                            border: Border.all(color: Colors.yellow),
-                            color: Colors.yellow,
-                            borderRadius: BorderRadius.circular(10),
-                            image: const DecorationImage(
-                                image: AssetImage("images/Python-logo.png"))),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.all(20),
-                        height: 120,
-                        width: 120,
-                        // color: Colors.cyan,
-                        decoration: BoxDecoration(
-                            boxShadow: [
-                              const BoxShadow(
-                                  color: Colors.black,
-                                  blurRadius: 5,
-                                  spreadRadius: 1,
-                                  offset: Offset(8, 8)),
-                            ],
-                            border: Border.all(color: Colors.yellow),
-                            color: Colors.yellow,
-                            borderRadius: BorderRadius.circular(10),
-                            image: const DecorationImage(
-                                image: AssetImage("images/js-logo.png"))),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Container(
-                  // height: 100,
-                  // width: 100,
-                  child: const Text(
-                    "Framwork",
-                    style: TextStyle(
-                        fontStyle: FontStyle.italic,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: Color.fromARGB(255, 0, 0, 0)),
-                  ),
-                  margin: const EdgeInsets.only(top: 20, left: 20, bottom: 5)),
-              Container(
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.all(20),
-                        height: 120,
-                        width: 120,
-                        // color: Colors.cyan,
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            const BoxShadow(
-                                color: Colors.black,
-                                blurRadius: 5,
-                                spreadRadius: 1,
-                                offset: Offset(8, 8)),
-                          ],
-                          border: Border.all(color: Colors.yellow),
-                          color: Colors.yellow,
-                          borderRadius: BorderRadius.circular(10),
-                          image: const DecorationImage(
-                              image: AssetImage("images/flutter-logo.png")),
-                        ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.all(20),
-                        height: 120,
-                        width: 120,
-                        // color: Colors.cyan,
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            const BoxShadow(
-                                color: Colors.black,
-                                blurRadius: 5,
-                                spreadRadius: 1,
-                                offset: Offset(8, 8)),
-                          ],
-                          border: Border.all(color: Colors.yellow),
-                          color: Colors.yellow,
-                          borderRadius: BorderRadius.circular(10),
-                          image: const DecorationImage(
-                              image: AssetImage("images/react-logo.png")),
-                        ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.all(20),
-                        height: 120,
-                        width: 120,
-                        // color: Colors.cyan,
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            const BoxShadow(
-                                color: Colors.black,
-                                blurRadius: 5,
-                                spreadRadius: 1,
-                                offset: Offset(8, 8)),
-                          ],
-                          border: Border.all(color: Colors.yellow),
-                          color: Colors.yellow,
-                          borderRadius: BorderRadius.circular(10),
-                          image: const DecorationImage(
-                              image: AssetImage("images/spring-logo.png")),
-                        ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.all(20),
-                        height: 120,
-                        width: 120,
-                        // color: Colors.cyan,
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            const BoxShadow(
-                                color: Colors.black,
-                                blurRadius: 5,
-                                spreadRadius: 1,
-                                offset: Offset(8, 8)),
-                          ],
-                          border: Border.all(color: Colors.yellow),
-                          color: Colors.yellow,
-                          borderRadius: BorderRadius.circular(10),
-                          image: const DecorationImage(
-                              image: AssetImage("images/hibernate-logo.png")),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Container(
-                  // height: 100,
-                  // width: 100,
-                  child: const Text(
-                    "Database",
-                    style: TextStyle(
-                        fontStyle: FontStyle.italic,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: Color.fromARGB(255, 0, 0, 0)),
-                  ),
-                  margin: const EdgeInsets.only(top: 20, left: 20, bottom: 5)),
-              Container(
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.all(20),
-                        height: 120,
-                        width: 120,
-                        // color: Colors.cyan,
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            const BoxShadow(
-                                color: Colors.black,
-                                blurRadius: 5,
-                                spreadRadius: 1,
-                                offset: Offset(8, 8)),
-                          ],
-                          border: Border.all(color: Colors.yellow),
-                          color: Colors.yellow,
-                          borderRadius: BorderRadius.circular(10),
-                          image: const DecorationImage(
-                              image: AssetImage("images/mongodb.png")),
-                        ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.all(20),
-                        height: 120,
-                        width: 120,
-                        // color: Colors.cyan,
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            const BoxShadow(
-                                color: Colors.black,
-                                blurRadius: 5,
-                                spreadRadius: 1,
-                                offset: Offset(8, 8)),
-                          ],
-                          border: Border.all(color: Colors.yellow),
-                          color: Colors.yellow,
-                          borderRadius: BorderRadius.circular(10),
-                          image: const DecorationImage(
-                              image: AssetImage("images/oracle.png")),
-                        ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.all(20),
-                        height: 120,
-                        width: 120,
-                        // color: Colors.cyan,
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            const BoxShadow(
-                                color: Colors.black,
-                                blurRadius: 5,
-                                spreadRadius: 1,
-                                offset: Offset(8, 8)),
-                          ],
-                          border: Border.all(color: Colors.yellow),
-                          color: Colors.yellow,
-                          borderRadius: BorderRadius.circular(10),
-                          image: const DecorationImage(
-                              image: AssetImage("images/mysql-img.png")),
-                        ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.all(20),
-                        height: 120,
-                        width: 120,
-                        // color: Colors.cyan,
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            const BoxShadow(
-                                color: Colors.black,
-                                blurRadius: 5,
-                                spreadRadius: 1,
-                                offset: Offset(8, 8)),
-                          ],
-                          border: Border.all(color: Colors.yellow),
-                          color: Colors.yellow,
-                          borderRadius: BorderRadius.circular(10),
-                          image: const DecorationImage(
-                              image: AssetImage("images/maria.png")),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Container(
-                  // height: 100,
-                  // width: 100,
-                  child: const Text(
-                    "Tools",
-                    style: TextStyle(
-                        fontStyle: FontStyle.italic,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: Color.fromARGB(255, 0, 0, 0)),
-                  ),
-                  margin: const EdgeInsets.only(top: 20, left: 20, bottom: 5)),
-              Container(
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.all(20),
-                        height: 120,
-                        width: 120,
-                        // color: Colors.cyan,
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            const BoxShadow(
-                                color: Colors.black,
-                                blurRadius: 5,
-                                spreadRadius: 1,
-                                offset: Offset(8, 8)),
-                          ],
-                          border: Border.all(color: Colors.yellow),
-                          color: Colors.yellow,
-                          borderRadius: BorderRadius.circular(10),
-                          image: const DecorationImage(
-                              image: AssetImage("images/vs-logo.png")),
-                        ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.all(20),
-                        height: 120,
-                        width: 120,
-                        // color: Colors.cyan,
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            const BoxShadow(
-                                color: Colors.black,
-                                blurRadius: 5,
-                                spreadRadius: 1,
-                                offset: Offset(8, 8)),
-                          ],
-                          border: Border.all(color: Colors.yellow),
-                          color: Colors.yellow,
-                          borderRadius: BorderRadius.circular(10),
-                          image: const DecorationImage(
-                              image: AssetImage("images/eclipse.png")),
-                        ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.all(20),
-                        height: 120,
-                        width: 120,
-                        // color: Colors.cyan,
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            const BoxShadow(
-                                color: Colors.black,
-                                blurRadius: 5,
-                                spreadRadius: 1,
-                                offset: Offset(8, 8)),
-                          ],
-                          border: Border.all(color: Colors.yellow),
-                          color: Colors.yellow,
-                          borderRadius: BorderRadius.circular(10),
-                          image: const DecorationImage(
-                              image: AssetImage("images/git-img.png")),
-                        ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.all(20),
-                        height: 120,
-                        width: 120,
-                        // color: Colors.cyan,
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            const BoxShadow(
-                                color: Colors.black,
-                                blurRadius: 5,
-                                spreadRadius: 1,
-                                offset: Offset(8, 8)),
-                          ],
-                          border: Border.all(color: Colors.yellow),
-                          color: Colors.yellow,
-                          borderRadius: BorderRadius.circular(10),
-                          image: const DecorationImage(
-                              image: AssetImage("images/postman.png")),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              languages(),
+              languageswidget(),
+              Framework(),
+              FrameworkWidget(),
+              Database(),
+              Databasewidget(),
+              Tools(),
+              Toolswidget(),
             ],
           ),
         ),
