@@ -9,6 +9,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  highlight: ^0.7.0
+  flutter_highlighting: ^0.9.0+11.8.0
+  
 
 dev_dependencies:
   flutter_test:
@@ -34,4 +37,10 @@ flutter:
   - images/react-logo.png
   - images/spring-logo.png
   - images/vs-logo.png
+  - images/logo.jpg
+  - images/codex.jpg
+  - images/google.jpg
+  - images/apple.jpg
+  - images/apple.png
+  - images/bg6.jpeg
   

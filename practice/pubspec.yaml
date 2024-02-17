@@ -17,3 +17,24 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets :
+  - images/aaru.jpg
+  - images/bff1.jpg
+  - images/bff2.jpg
+  - images/bff3.jpg
+  - images/brothers.jpg
+  - images/chiku.jpg
+  - images/class.jpg
+  - images/CodeX-Logo.jpg
+  - images/codex.jpg
+  - images/dream.jpg
+  - images/love.jpg
+  - images/me.jpg
+  - images/momo.jpg
+  - images/sakshi.jpg
+  - images/together.jpg
+  - images/unknown.jpg
+  - images/varad_post.jpg
+  - images/varad_profil.jpg
+  
+  

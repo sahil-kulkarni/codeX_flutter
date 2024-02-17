@@ -7,20 +7,38 @@ void main() {
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
+  Widget ReusableContainer(){
+    return  Container(
+                    margin: EdgeInsets.all(10),
+                    height: 100,
+                    width: 200,
+                    color: Colors.amber,
+                  );
+  }
+
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
       home: Scaffold(
-        body: Container(
-          height: 400,
-          width: 400,
-          color:  Colors.amber,
-          margin: EdgeInsets.only(left: 200, top: 200),
-          child: Center(
-            child: Container(
-              height: 200,
-              width: 200,
-              color: Colors.black,
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+
+                  ReusableContainer(),
+                  ReusableContainer(),
+                  ReusableContainer(),
+                  ReusableContainer(),
+                  ReusableContainer(),
+                  ReusableContainer(),
+                  ReusableContainer(),
+                  ReusableContainer(),
+                  ReusableContainer(),
+         
+                ],
+              ),
             ),
           ),
         ),

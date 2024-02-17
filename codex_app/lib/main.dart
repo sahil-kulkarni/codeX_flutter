@@ -1,4 +1,4 @@
-import 'package:codex_app/codexapp.dart';
+import 'package:codex_app/loginPage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +12,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Codexapp(),
+      home: LoginPage(),
     );
   }
 }
