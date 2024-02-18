@@ -20,8 +20,8 @@ class _LoginPageState extends State<LoginPage> {
         ),
         child: Center(
           child: Container(
-            height: 470,
-            width: 300,
+            height: 510,
+            width: 320,
             decoration: BoxDecoration(
               border: Border.all(color: Colors.white, width: 1),
               borderRadius: const BorderRadius.all(Radius.elliptical(30, 30)),
@@ -33,13 +33,13 @@ class _LoginPageState extends State<LoginPage> {
                   Container(
                     child: Center(
                       child: Container(
-                          width: 200,
-                          height: 100,
+                          width: 100,
+                          height: 150,
                           decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black),
-                            borderRadius: BorderRadius.circular(100),
+                            // border: Border.all(color: Colors.black),
+                            // borderRadius: BorderRadius.circular(100),
                           ),
-                          child: Image.asset('images/codex.jpg',fit: BoxFit.cover,),
+                          child: Image.asset('images/x Codex Logo.png',fit: BoxFit.cover,),
                           
                           ),
                     ),
