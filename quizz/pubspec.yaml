@@ -57,6 +57,14 @@ flutter:
   uses-material-design: true
   assets :
   - images/bg6.jpeg
+  - images/bg1.jpeg
+  - images/bg2.jpeg
+  - images/bg3.jpeg
+  - images/bg4.webp
+  - images/bg5.jpeg
+  - images/bg7.jpg
+  - images/bg8.jpeg
+  - images/cover.jpeg
 
 
   

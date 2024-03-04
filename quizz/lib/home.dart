@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 class Quiz_app extends StatefulWidget {
@@ -10,7 +8,6 @@ class Quiz_app extends StatefulWidget {
 }
 
 class _Quiz_appState extends State<Quiz_app> {
-
   List<Map> questions = [
     {
       "questions": "Founder of BJP",
@@ -34,13 +31,15 @@ class _Quiz_appState extends State<Quiz_app> {
     },
   ];
 
-  int questionIndex = 0;
+  int questionIndex = -1;
   int selectedIndex = -1;
+  int score = 0;
 
   MaterialStatePropertyAll<Color?>? checkAns(int buttonIndex) {
     if (selectedIndex != -1) {
       if (buttonIndex == selectedIndex) {
         if (selectedIndex == questions[questionIndex]["correctAnswer"]) {
+          score=questionIndex+1;
           return const MaterialStatePropertyAll(Colors.green);
         } else {
           return const MaterialStatePropertyAll(Colors.red);
@@ -58,60 +57,69 @@ class _Quiz_appState extends State<Quiz_app> {
 
   @override
   Widget build(BuildContext context) {
-    if (selectedIndex==-1) {
+    if (questionIndex == -1) {
       return Scaffold(
-       
         body: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(image: AssetImage("images/bg6.jpeg"))
-          ),
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("images/bg2.jpeg"), fit: BoxFit.cover)),
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 InkWell(
-                  onTap: () => selectedIndex=0,
+                  onTap: () => setState(() {
+                    questionIndex = 0;
+                  }),
                   child: Container(
                     height: 50,
                     width: 350,
-                    
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: const Color.fromARGB(255, 0, 0, 0),
+                      color: Color.fromARGB(255, 214, 207, 207),
                     ),
-                    child: Text("Welcome to CodeX Quizz",
-                    style: TextStyle(fontSize: 25,color:Color.fromARGB(255, 255, 255, 255)),
-                    
+                    child: const Text(
+                      "Welcome to CodeX Quizz",
+                      style: TextStyle(
+                          fontSize: 25,
+                          color: Color.fromARGB(255, 0, 0, 0)),
                     ),
-                    padding: EdgeInsets.only(left: 25, top: 10),
+                    padding: const EdgeInsets.only(left: 25, top: 10),
                   ),
                 ),
-                SizedBox(height: 20,),
-        
-               
+                const SizedBox(
+                  height: 20,
+                ),
               ],
             ),
           ),
         ),
-        
-
       );
-      
+    } else if (questionIndex == 3) {
+      return Scaffold(
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+            score>=2 ?   Text("You are Passed"):  Text("You are Failed"),
+            Text("${score} /${questionIndex}"),
+              Container(
+                margin: EdgeInsets.only(top: 20),
+                child: ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        questionIndex = 0;
+                      });
+                    },
+                    child: Text("Try again")),
+              ),
+            ],
+          ),
+        ),
+      );
     }
-    // else if(selectedIndex==3){
-    //   return Scaffold(
-    //     body: Center(
-    //       child: Column(
-    //         mainAxisAlignment: MainAxisAlignment.center,
-    //         children: [
-    //           Text("You are Passed")
-    //         ],
-    //       ),
-    //     ),
-    //   );
-    // }
 
-     return Scaffold(
+    return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text("Quizz App"),
@@ -120,21 +128,22 @@ class _Quiz_appState extends State<Quiz_app> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           selectedIndex = -1;
-          if (questionIndex < questions.length - 1) {
+          if (questionIndex < questions.length) {
             setState(() {
               questionIndex++;
             });
           } else {
             // print("**$questionIndex");
-            questionIndex = 1;
+            // questionIndex = 1;
             setState(() {
-              questionIndex=0;
+              questionIndex = 0;
             });
           }
         },
-        child: Icon(Icons.arrow_forward),
+        child: const Icon(Icons.arrow_forward),
       ),
-      body: Column(
+      body:
+      Column(
         // mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           const SizedBox(
@@ -149,7 +158,7 @@ class _Quiz_appState extends State<Quiz_app> {
               ),
               Text(
                 "${questionIndex + 1}/${questions.length}",
-                style: const TextStyle(fontSize: 25), 
+                style: const TextStyle(fontSize: 25),
               )
             ],
           ),
@@ -182,7 +191,7 @@ class _Quiz_appState extends State<Quiz_app> {
             child: Text("A. ${questions[questionIndex]["options"][0]}"),
             style: ButtonStyle(
                 backgroundColor: checkAns(0),
-                fixedSize: MaterialStatePropertyAll(Size(330, 20))),
+                fixedSize: const MaterialStatePropertyAll(Size(330, 20))),
           ),
           const SizedBox(
             height: 15,
@@ -196,7 +205,7 @@ class _Quiz_appState extends State<Quiz_app> {
             child: Text("B. ${questions[questionIndex]["options"][1]}"),
             style: ButtonStyle(
                 backgroundColor: checkAns(1),
-                fixedSize: MaterialStatePropertyAll(Size(330, 20))),
+                fixedSize: const MaterialStatePropertyAll(Size(330, 20))),
           ),
           const SizedBox(
             height: 15,
@@ -210,7 +219,7 @@ class _Quiz_appState extends State<Quiz_app> {
             child: Text("C. ${questions[questionIndex]["options"][2]}"),
             style: ButtonStyle(
                 backgroundColor: checkAns(2),
-                fixedSize: MaterialStatePropertyAll(Size(330, 20))),
+                fixedSize: const MaterialStatePropertyAll(Size(330, 20))),
           ),
           const SizedBox(
             height: 15,
@@ -224,7 +233,7 @@ class _Quiz_appState extends State<Quiz_app> {
             child: Text("D. ${questions[questionIndex]["options"][3]}"),
             style: ButtonStyle(
                 backgroundColor: checkAns(3),
-                fixedSize: MaterialStatePropertyAll(Size(330, 20))),
+                fixedSize: const MaterialStatePropertyAll(Size(330, 20))),
           ),
           const SizedBox(
             height: 15,
