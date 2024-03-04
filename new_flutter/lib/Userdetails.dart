@@ -19,32 +19,33 @@ class _UserDetailsState extends State<UserDetails> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         centerTitle: true,
-        title: Text("User Profile"),
+        title: const Text("User Profile"),
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("UserNamae : ${UserProfile['Username']}",style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
-            SizedBox(
+            Text("UserNamae : ${UserProfile['username']}",style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+            const SizedBox(
               height: 20,
             ),
-            Text("Email: ${UserProfile['email']}",style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
-            SizedBox(
+            Text("Email: ${UserProfile['email']}",style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+            const SizedBox(
               height: 20,
             ),
-            Text("Address: ${UserProfile['address']['street']}",style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-            SizedBox(
+            Text("Address: ${UserProfile['address']['street']}",style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+            const SizedBox(
               height: 20,
             ),
-            Text("Suite: ${UserProfile['address']['suite']}",style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-            SizedBox(
+            Text("Suite: ${UserProfile['address']['suite']}",style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+            const SizedBox(
               height: 20,
             ),
-            Text("City: ${UserProfile['address']['city']}",style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-            SizedBox(
+            Text("City: ${UserProfile['address']['city']}",style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+            const SizedBox(
               height: 20,
             ),
-            Text("ZipCode: ${UserProfile['address']['zipcode']}",style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20))
+            Text("ZipCode: ${UserProfile['address']['zipcode']}",style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20))
           ],
         ),
       ),
