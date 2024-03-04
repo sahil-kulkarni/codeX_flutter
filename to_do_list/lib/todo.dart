@@ -43,36 +43,69 @@ class _ToDoListState extends State<ToDoList> {
     );
   }
 
-  void addList(){
-    showBottomSheet(context: context,
-     builder: (context) {
-       return SizedBox(
+  // void addList(){
+  //   showBottomSheet(context: context,
+  //    builder: (context) {
+  //      return SizedBox(
+  //         height: 200,
+  //         width: 200,
+  //         child: Column(
+  //           children: [
+  //             TextFormField(
+  //               initialValue:'',
+  //               decoration: InputDecoration(
+  //                 label: Text("Task 1"),
+  //               ),
+  //               onChanged: (value) {
+  //                 userdata= value;
+  //                 // print('userdata');
+  //               },
+
+  //             ),
+
+  //             SizedBox(height: 10,),
+  //             ElevatedButton(onPressed: (){
+  //                 setState(() {
+  //                   addData();
+  //                 });
+  //                 Navigator.pop(context);
+  //             }, child: Text("Save")),
+  //           ],
+  //         ),
+  //      );
+  //    },);
+  // }
+
+   void addToDoList() {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return SizedBox(
           height: 200,
           width: 200,
-          child: Column(
-            children: [
-              TextFormField(
-                initialValue:'',
-                decoration: InputDecoration(
-                  label: Text("Task 1"),
-                ),
-                onChanged: (value) {
-                  userdata= value;
-                },
-
-              ),
-
-              SizedBox(height: 10,),
-              ElevatedButton(onPressed: (){
+          child: Column(children: [
+            TextFormField(
+              initialValue: '',
+              decoration: const InputDecoration(label: Text("Task1")),
+              onChanged: (value) {
+                userdata = value;
+              },
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            ElevatedButton(
+                onPressed: () {
                   setState(() {
                     addData();
                   });
                   Navigator.pop(context);
-              }, child: Text("Save")),
-            ],
-          ),
-       );
-     },);
+                },
+                child: const Text("Save"))
+          ]),
+        );
+      },
+    );
   }
 
     void addData(){
@@ -87,13 +120,16 @@ class _ToDoListState extends State<ToDoList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.amber,
+        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
         title: Text("To DO List"),
         centerTitle: true,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed:(){
-          addList();
+          
+          setState(() {
+            addToDoList();
+          });
         } ,
         child: Icon(Icons.add),
         ),
@@ -103,9 +139,9 @@ class _ToDoListState extends State<ToDoList> {
             return InkWell(
               child: Container(
                 margin: EdgeInsets.only(top: 20),
-                height: 50,
+                height: 60,
                 // width: 100,
-                color: Color.fromARGB(255, 200, 183, 115),
+                color: Color.fromARGB(255, 203, 202, 197),
                 child: Text(Data[index]),
               ),
               onTap: () {
@@ -120,9 +156,9 @@ class _ToDoListState extends State<ToDoList> {
                     ElevatedButton(onPressed: (){
                       setState(() {
                         Navigator.of(context).pop();
-                        ToDoList();
+                        todeleteList(index);
                       });
-                    }, child: Text("Yes"))
+                    }, child: Text("Yes")),
                    
                   ],
                  ),);
